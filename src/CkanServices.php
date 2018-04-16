@@ -12,6 +12,14 @@ final class CkanServices
             'baseUri' => 'http://demo.ckan.org',
             'apiVersion' => '2018-04-16',
             'operations' => [
+                // ckan.logic.action.get.site_read -> http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.site_read
+                'GetSiteRead' => [
+                    'httpMethod' => 'GET',
+                    'uri' => '/api/3/action/site_read',
+                    'summary' => 'not defined in the official guide - healtcheck of the service (i suppose)',
+                    'responseModel' => 'getSiteRead',
+                    'responseNotes' => 'Return type: boolean'
+                ],
                 // ckan.logic.action.get.package_list -> http://docs.ckan.org/en/ckan-2.7.3/api/index.html#ckan.logic.action.get.package_list
                 'GetPackageList' => [
                     'httpMethod' => 'GET',
@@ -19,7 +27,7 @@ final class CkanServices
                     //'uri' => '/api/3/action/package_list/{limit,offset}',
                     'summary' => 'Return a list of the names of the site’s datasets (packages).',
                     'responseModel' => 'getPackageList',
-                    'responseNotes' => 'list of strings',
+                    'responseNotes' => 'Return type: list of strings',
                     'parameters' => [
                         'limit' => [
                             'type' => 'integer',
@@ -37,6 +45,12 @@ final class CkanServices
                 ]
             ],
             'models' => [
+                'getSiteRead' => [
+                    'type' => 'object',
+                    'additionalProperties' => [
+                        'location' => 'json'
+                    ]
+                ],
                 'getPackageList' => [
                     'type' => 'object',
                     'additionalProperties' => [

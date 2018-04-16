@@ -7,3 +7,5 @@ composer.lock
 
 phpunit.xml
 extra/*
+
+ckan.logic.action.*.php
