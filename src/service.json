@@ -1,7 +1,7 @@
 {
   "name": "Ckan",
-  "apiVersion": "2012-10-14",
-  "baseUrl": "http://api.foo.com",
+  "apiVersion": "2018-04-16",
+
   "description": "Ckan is an API that allows you to interact with Ckan Server (api V3)",
   "operations": {
     "GetFoo": {
@@ -25,6 +25,24 @@
           "location": "json",
           "type": "string",
           "required": true
+        }
+      }
+    },
+    "GetPackageList": {
+      "httpMethod": "GET",
+      "uri": "/api/3/action/package_list",
+      "summary": "Return a list of the names of the site’s datasets (packages).",
+      "responseModel": "PackageListResponse",
+      "parameters": {
+        "limit": {
+          "location": "uri",
+          "description": "limit (int) – if given, the list of datasets will be broken into pages of at most limit datasets per page and only one page will be returned at a time (optional)",
+          "required": false
+        },
+        "offset": {
+          "location": "uri",
+          "description": "offset (int) – when limit is given, the offset to start returning packages from",
+          "required": false
         }
       }
     }
@@ -53,9 +71,6 @@
             }
           }
         }
-      },
-      "additionalProperties": {
-        "location": "json"
       }
     },
     "FooResponse": {
@@ -79,6 +94,13 @@
             }
           }
         }
+      }
+    },
+    "PackageListResponse": {
+      "extends": "BaseResponse",
+      "type": "object",
+      "additionalProperties": {
+        "location": "json"
       }
     }
   }
