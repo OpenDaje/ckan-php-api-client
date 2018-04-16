@@ -10,7 +10,7 @@
             "homepage": "http://www.example.com"
         }
     ],
-    "keywords": ["REST","PHP", "CKAN", "ckan api consumer"],
+    "keywords": ["REST","PHP", "CKAN", "ckan-server","php api consumer"],
     "minimum-stability": "stable",
     "require": {
         "php": "^7.0",
