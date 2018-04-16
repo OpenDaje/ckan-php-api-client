@@ -1,11 +1,11 @@
 <?php
 
 namespace OpenDaje;
+
 use GuzzleHttp\Command\Guzzle\Description;
 
 final class CkanServices
 {
-
     public static function description()
     {
         return [

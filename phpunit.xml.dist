@@ -15,9 +15,7 @@
         </testsuite>
     </testsuites>
     <php>
-        <server name="FOO_BASE" value="https://example.com" />
-        <server name="FOO_USER" value="Foo" />
-        <server name="FOO_PASS" value="Bar" />
+        <server name="BASE_URI" value="https://example.com" />
         <server name="API_KEY" value="my_dev_api_key" />
     </php>
     <filter>

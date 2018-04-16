@@ -23,7 +23,6 @@ use GuzzleHttp\Psr7\Stream;
 
 use PHPUnit\Framework\TestCase;
 
-
 /**
  * @coversDefaultClass \OpenDaje\RestClient\CkanApiClient
  */
@@ -45,7 +44,7 @@ class CkanApiClientTest extends TestCase
 //
         $this->client = CkanApiClient::create([
             //'base_uri' => Server::$url,
-            'base_uri' => 'Http://www.example.com',
+            'base_uri' => $_SERVER['BASE_URI'],
             'X-CKAN-API-Key' => $_SERVER['API_KEY'],
 
         ]);
@@ -54,7 +53,7 @@ class CkanApiClientTest extends TestCase
 
     public function testPushAndPop()
     {
-                $stack = [];
+        $stack = [];
         $this->assertSame(0, count($stack));
 
         array_push($stack, 'foo');

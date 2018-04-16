@@ -1,0 +1,20 @@
+# Changelog
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
+and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
+
+## [Unreleased]
+- ckan.logic.action.get.group_list
+- ckan.logic.action.get.member_list 
+- ckan.logic.action.get.package_revision_list
+- ckan.logic.action.get.revision_list
+- ckan.logic.action.get.current_package_list_with_resources
+
+
+
+
+## [0.1.0] - 2018-04-17
+### Added
+- [ckan.logic.action.get.site_read](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.site_read)
+- [ckan.logic.action.get.package_list](http://docs.ckan.org/en/ckan-2.7.3/api/index.html#ckan.logic.action.get.package_list)

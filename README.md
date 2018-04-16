@@ -2,4 +2,15 @@
 [![Build Status](https://travis-ci.org/OpenDaje/ckan-php-api-client.svg?branch=master)](https://travis-ci.org/OpenDaje/ckan-php-api-client)
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
+
 Php api client for ckan server.
+
+
+
+
+#Endpoints covered by this library
+
+| ENDPOINT | STATUS |
+| ------------- | ------------- |
+| [ckan.logic.action.get.site_read](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.site_read) | Y |
+| [ckan.logic.action.get.package_list](http://docs.ckan.org/en/ckan-2.7.3/api/index.html#ckan.logic.action.get.package_list) | Y |
