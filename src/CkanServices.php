@@ -24,7 +24,6 @@ final class CkanServices
                 'GetPackageList' => [
                     'httpMethod' => 'GET',
                     'uri' => '/api/3/action/package_list{?limit,offset}',
-                    //'uri' => '/api/3/action/package_list/{limit,offset}',
                     'summary' => 'Return a list of the names of the site’s datasets (packages).',
                     'responseModel' => 'getPackageList',
                     'responseNotes' => 'Return type: list of strings',
@@ -42,7 +41,36 @@ final class CkanServices
                             'description' => 'offset (int) – when limit is given, the offset to start returning packages from'
                         ]
                     ]
-                ]
+                ],
+                // ckan.logic.action.get.current_package_list_with_resources -> http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.current_package_list_with_resources
+                'GetCurrentPackageListWithResources' => [
+                    'httpMethod' => 'GET',
+                    'uri' => '/api/3/action/current_package_list_with_resources{?limit,offset,page}',
+                    'summary' => 'Return a list of the site’s datasets (packages) and their resources. The list is sorted most-recently-modified first.',
+                    'responseModel' => 'getCurrentPackageListWithResources',
+                    'responseNotes' => 'Return type: list of dictionaries.',
+                    'parameters' => [
+                        'limit' => [
+                            'type' => 'integer',
+                            'location' => 'uri',
+                            'required' => false,
+                            'description' => 'limit (int) – if given, the list of datasets will be broken into pages of at most limit datasets per page and only one page will be returned at a time (optional).',
+                        ],
+                        'offset' => [
+                            'type' => 'string',
+                            'location' => 'uri',
+                            'required' => false,
+                            'description' => 'offset (int) – when limit is given, the offset to start returning packages from'
+                        ],
+                        'page' => [
+                            'type' => 'string',
+                            'location' => 'uri',
+                            'required' => false,
+                            'description' => 'page (int) – when limit is given, which page to return, Deprecated: use offset'
+                        ]
+                    ]
+
+                ],
             ],
             'models' => [
                 'getSiteRead' => [
@@ -56,7 +84,14 @@ final class CkanServices
                     'additionalProperties' => [
                         'location' => 'json'
                     ]
+                ],
+                'getCurrentPackageListWithResources' => [
+                    'type' => 'object',
+                    'additionalProperties' => [
+                        'location' => 'json'
+                    ]
                 ]
+
             ]
         ];
     }

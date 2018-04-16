@@ -9,10 +9,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - ckan.logic.action.get.member_list 
 - ckan.logic.action.get.package_revision_list
 - ckan.logic.action.get.revision_list
-- ckan.logic.action.get.current_package_list_with_resources
 
 
 
+## [0.1.*] - WIP
+### Added
+- [ckan.logic.action.get.current_package_list_with_resources](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.current_package_list_with_resources)
 
 ## [0.1.0] - 2018-04-17
 ### Added

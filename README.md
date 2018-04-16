@@ -8,9 +8,10 @@ Php api client for ckan server.
 
 
 
-#Endpoints covered by this library
+# Endpoints covered by this library
 
 | ENDPOINT | STATUS |
 | ------------- | ------------- |
 | [ckan.logic.action.get.site_read](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.site_read) | Y |
 | [ckan.logic.action.get.package_list](http://docs.ckan.org/en/ckan-2.7.3/api/index.html#ckan.logic.action.get.package_list) | Y |
+| [ckan.logic.action.get.current_package_list_with_resources](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.current_package_list_with_resources) | Y |
