@@ -1,8 +1,11 @@
 .DS_Store
 /vendor
 /.idea
+.php_cs.cache
 
 composer.lock
 
 phpunit.xml
 extra/*
+
+/ckan.logic.action.*.php
