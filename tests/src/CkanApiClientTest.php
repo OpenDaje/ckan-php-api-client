@@ -46,7 +46,7 @@ class CkanApiClientTest extends TestCase
         $this->client = CkanApiClient::create([
             //'base_uri' => Server::$url,
             'base_uri' => 'Http://www.example.com',
-            //'api_user' => $_SERVER['OPENDAJE_USER'],
+            'X-CKAN-API-Key' => $_SERVER['API_KEY'],
 
         ]);
     }
