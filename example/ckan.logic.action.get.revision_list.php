@@ -9,9 +9,10 @@ $ckan_client = CkanApiClient::create([
     'X-CKAN-API-Key' => 'my_super_secret_api_key',
 ]);
 
-//$command = $ckan_client->getCommand('GetPackageList');
+$command = $ckan_client->getCommand('GetRevisionList');
 
-$command = $ckan_client->getCommand('GetPackageList', array('limit' => 10, 'offset' => 2));
+
+//$command = $ckan_client->getCommand('GetRevisionList', array('since_id' => '14459e39-21cf-4b3e-9ade-058df2771981', 'since_time' => '1523955129', 'sort' => 'time_desc'));
 
 $responseModel = $ckan_client->execute($command);
 

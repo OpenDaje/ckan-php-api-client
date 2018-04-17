@@ -9,9 +9,9 @@ $ckan_client = CkanApiClient::create([
     'X-CKAN-API-Key' => 'my_super_secret_api_key',
 ]);
 
-//$command = $ckan_client->getCommand('GetPackageList');
+//$command = $ckan_client->getCommand('GetCurrentPackageListWithResources');
 
-$command = $ckan_client->getCommand('GetPackageList', array('limit' => 10, 'offset' => 2));
+$command = $ckan_client->getCommand('GetCurrentPackageListWithResources', array('limit' => 1, 'offset' => 2, 'page' => 9));
 
 $responseModel = $ckan_client->execute($command);
 
