@@ -40,8 +40,6 @@ Requirements
 
 
 
-
-PLANNED LOW PRIORITY
 ## Contribute
 
 Please feel free to fork and extend, send a pull request with your changes!
