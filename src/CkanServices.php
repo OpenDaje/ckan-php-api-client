@@ -100,8 +100,121 @@ final class CkanServices
                         ],
                     ]
                 ],
+                // ckan.logic.action.get.package_revision_list -> http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.package_revision_list
+                'GetPackageRevisionList' => [
+                    'httpMethod' => 'GET',
+                    'uri' => '/api/3/action/package_revision_list{?id}',
+                    'summary' => 'Return a dataset (package)’s revisions as a list of dictionaries.',
+                    'responseModel' => 'getGenericResponse',
+                    'responseNotes' => 'not defined in the official guide',
+                    'parameters' => [
+                        'id' => [
+                            'type' => 'string',
+                            'location' => 'uri',
+                            'required' => true,
+                            'description' => 'id (string) – the id or name of the dataset',
+                        ]
+                    ],
+                ],
+                // ckan.logic.action.get.member_list -> http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.member_list
+                'GetMemberList' => [
+                    'httpMethod' => 'GET',
+                    'uri' => '/api/3/action/member_list{?id,object_type,capacity}',
+                    'summary' => 'Return the members of a group. The user must have permission to ‘get’ the group.',
+                    'responseModel' => 'getGenericResponse',
+                    'responseNotes' => 'Return type: list of (id, type, capacity) tuples',
+                    'parameters' => [
+                        'id' => [
+                            'type' => 'string',
+                            'location' => 'uri',
+                            'required' => false,
+                            'description' => 'id (string) – the id or name of the group',
+                        ],
+                        'object_type' => [
+                            'type' => 'string',
+                            'location' => 'uri',
+                            'required' => false,
+                            'description' => 'object_type (string) – restrict the members returned to those of a given type, e.g.  \'user\' or \'package\'',
+                        ],
+                        'capacity' => [
+                            'type' => 'string',
+                            'location' => 'uri',
+                            'required' => false,
+                            'description' => 'capacity (string) – restrict the members returned to those with a given capacity, e.g. \'member\', \'editor\', \'admin\', \'public\', \'private\'',
+                        ],
+                    // TODO ?? Check guzzle service definition guide for exception definition
+                    //Raises:
+                    //
+                    //ckan.logic.NotFound: if the group doesn’t exist
+
+                    ],
+                ],
+//              PLACEORDER
+//
+//                ckan.logic.action.get.group_list	PLANNED - LOW PRIORITY
+//                ckan.logic.action.get.organization_list	PLANNED - LOW PRIORITY
+//                ckan.logic.action.get.group_list_authz	PLANNED - LOW PRIORITY
+//                ckan.logic.action.get.organization_list_for_user	PLANNED - LOW PRIORITY
+//                ckan.logic.action.get.group_revision_list	PLANNED - LOW PRIORITY
+//                ckan.logic.action.get.organization_revision_list	PLANNED - LOW PRIORITY
+//
+                // ckan.logic.action.get.license_list -> http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.license_list
+                'GetLicenseList' => [
+                    'httpMethod' => 'GET',
+                    'uri' => '/api/3/action/license_list',
+                    'summary' => 'Return the list of licenses available for datasets on the site.',
+                    'responseModel' => 'getGenericResponse',
+                    'responseNotes' => 'Return type: list of dictionaries',
+                ],
+
+                // ckan.logic.action.get.tag_list -> http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.tag_list
+                'GetTagList' => [
+                    'httpMethod' => 'GET',
+                    'uri' => '/api/3/action/tag_list{?query,vocabulary_id,all_fields}',
+                    'summary' => 'Return a list of the site’s tags.',
+                    'responseModel' => 'getGenericResponse',
+                    'responseNotes' => 'Return type: list of dictionaries',
+                    'parameters' => [
+                        'query' => [
+                            'type' => 'string',
+                            'location' => 'uri',
+                            'required' => false,
+                            'description' => 'query (string) – a tag name query to search for, if given only tags whose names contain this string will be returned (optional)',
+                        ],
+                        'vocabulary_id' => [
+                            'type' => 'string',
+                            'location' => 'uri',
+                            'required' => false,
+                            'description' => 'vocabulary_id (string) – the id or name of a vocabulary, if give only tags that belong to this vocabulary will be returned (optional)'
+                        ],
+                        'all_fields' => [
+                            'type' => 'boolean',
+                            'location' => 'uri',
+                            'required' => false,
+                            'description' => 'all_fields (boolean) – return full tag dictionaries instead of just names'
+
+                        ]
+                    ],
+                ],
+
+
+
+
+
+
+
+
+
+
             ],
             'models' => [
+                'getGenericResponse' => [
+                    'type' => 'object',
+                    'additionalProperties' => [
+                        'location' => 'json'
+                    ]
+                ],
+
                 'getSiteRead' => [
                     'type' => 'object',
                     'additionalProperties' => [
