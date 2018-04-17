@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [0.1.*] - WIP
 ### Added
 - [ckan.logic.action.get.current_package_list_with_resources](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.current_package_list_with_resources)
+- [ckan.logic.action.get.revision_list](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.revision_list)
 
 ## [0.1.0] - 2018-04-17
 ### Added

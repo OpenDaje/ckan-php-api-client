@@ -69,7 +69,36 @@ final class CkanServices
                             'description' => 'page (int) – when limit is given, which page to return, Deprecated: use offset'
                         ]
                     ]
-
+                ],
+                // ckan.logic.action.get.get.revision_list -> http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.revision_list
+                'GetRevisionList' => [
+                    'httpMethod' => 'GET',
+                    'uri' => '/api/3/action/revision_list{?since_id,since_time,sort}',
+                    'summary' => 'Return a list of the IDs of the site’s revisions. They are sorted with the newest first. Since the results are limited to 50 IDs, you can page through them using parameter since_id.',
+                    'responseModel' => 'getRevisionList',
+                    'responseNotes' => 'Return type: list of revision IDs, limited to 50',
+                    'parameters' => [
+                        'since_id' => [
+                            //TODO ?? string or strong type Uuid?? not defined in the official guide
+                            'type' => 'string',
+                            'location' => 'uri',
+                            'required' => false,
+                            'description' => 'the revision ID after which you want the revisions.',
+                        ],
+                        'since_time' => [
+                            //TODO ?? how to define time value? check guzzle service definition guide
+                            'type' => 'string',
+                            'location' => 'uri',
+                            'required' => false,
+                            'description' => 'the timestamp after which you want the revisions.',
+                        ],
+                        'sort' => [
+                            'type' => 'string',
+                            'location' => 'uri',
+                            'required' => false,
+                            'description' => '(string) – the order to sort the related items in, possible values are ‘time_asc’, ‘time_desc’ (default). (optional).',
+                        ],
+                    ]
                 ],
             ],
             'models' => [
@@ -90,8 +119,13 @@ final class CkanServices
                     'additionalProperties' => [
                         'location' => 'json'
                     ]
-                ]
-
+                ],
+                'getRevisionList' => [
+                    'type' => 'object',
+                    'additionalProperties' => [
+                        'location' => 'json'
+                    ]
+                ],
             ]
         ];
     }
