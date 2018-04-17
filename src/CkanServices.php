@@ -116,7 +116,6 @@ final class CkanServices
                         ]
                     ],
                 ],
-
                 // ckan.logic.action.get.member_list -> http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.member_list
                 'GetMemberList' => [
                     'httpMethod' => 'GET',
@@ -150,6 +149,29 @@ final class CkanServices
 
                     ],
                 ],
+
+//              PLACEORDER
+//
+//                ckan.logic.action.get.group_list	PLANNED - LOW PRIORITY
+//                ckan.logic.action.get.organization_list	PLANNED - LOW PRIORITY
+//                ckan.logic.action.get.group_list_authz	PLANNED - LOW PRIORITY
+//                ckan.logic.action.get.organization_list_for_user	PLANNED - LOW PRIORITY
+//                ckan.logic.action.get.group_revision_list	PLANNED - LOW PRIORITY
+//                ckan.logic.action.get.organization_revision_list	PLANNED - LOW PRIORITY
+
+
+                // ckan.logic.action.get.license_list -> http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.license_list
+                'GetLicenseList' => [
+                    'httpMethod' => 'GET',
+                    'uri' => '/api/3/action/license_list',
+                    'summary' => 'Return the list of licenses available for datasets on the site.',
+                    'responseModel' => 'getGenericResponse',
+                    'responseNotes' => 'Return type: list of dictionaries',
+                ],
+
+
+
+
 
 
 

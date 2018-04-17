@@ -26,7 +26,7 @@ Requirements
 | [ckan.logic.action.get.organization_list_for_user](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.organization_list_for_user) | PLANNED - LOW PRIORITY |
 | [ckan.logic.action.get.group_revision_list](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.group_revision_list) | PLANNED - LOW PRIORITY |
 | [ckan.logic.action.get.organization_revision_list](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.organization_revision_list) | PLANNED - LOW PRIORITY |
-| [ckan.logic.action.get.license_list](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.license_list) | PLANNED |
+| [ckan.logic.action.get.license_list](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.license_list) | Y |
 | [ckan.logic.action.get.tag_list](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.tag_list) | PLANNED |
 | [ckan.logic.action.get.user_list](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.user_list) | PLANNED - LOW PRIORITY |
 | [ckan.logic.action.get.package_relationships_list](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.package_relationships_list) | PLANNED |
