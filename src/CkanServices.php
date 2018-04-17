@@ -100,14 +100,12 @@ final class CkanServices
                         ],
                     ]
                 ],
-
-
                 // ckan.logic.action.get.package_revision_list -> http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.package_revision_list
                 'GetPackageRevisionList' => [
                     'httpMethod' => 'GET',
                     'uri' => '/api/3/action/package_revision_list{?id}',
                     'summary' => 'Return a dataset (package)’s revisions as a list of dictionaries.',
-                    'responseModel' => 'getGenericRespone',
+                    'responseModel' => 'getGenericResponse',
                     'responseNotes' => 'not defined in the official guide',
                     'parameters' => [
                         'id' => [
@@ -119,11 +117,39 @@ final class CkanServices
                     ],
                 ],
 
+                // ckan.logic.action.get.member_list -> http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.member_list
+                'GetMemberList' => [
+                    'httpMethod' => 'GET',
+                    'uri' => '/api/3/action/member_list{?id,object_type,capacity}',
+                    'summary' => 'Return the members of a group. The user must have permission to ‘get’ the group.',
+                    'responseModel' => 'getGenericResponse',
+                    'responseNotes' => 'Return type: list of (id, type, capacity) tuples',
+                    'parameters' => [
+                        'id' => [
+                            'type' => 'string',
+                            'location' => 'uri',
+                            'required' => false,
+                            'description' => 'id (string) – the id or name of the group',
+                        ],
+                        'object_type' => [
+                            'type' => 'string',
+                            'location' => 'uri',
+                            'required' => false,
+                            'description' => 'object_type (string) – restrict the members returned to those of a given type, e.g.  \'user\' or \'package\'',
+                        ],
+                        'capacity' => [
+                            'type' => 'string',
+                            'location' => 'uri',
+                            'required' => false,
+                            'description' => 'capacity (string) – restrict the members returned to those with a given capacity, e.g. \'member\', \'editor\', \'admin\', \'public\', \'private\'',
+                        ],
+                    // TODO ?? Check guzzle service definition guide for exception definition
+                    //Raises:
+                    //
+                    //ckan.logic.NotFound: if the group doesn’t exist
 
-
-
-
-
+                    ],
+                ],
 
 
 
@@ -135,7 +161,7 @@ final class CkanServices
 
             ],
             'models' => [
-                'getGenericRespone' => [
+                'getGenericResponse' => [
                     'type' => 'object',
                     'additionalProperties' => [
                         'location' => 'json'

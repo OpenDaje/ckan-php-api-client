@@ -1,5 +1,4 @@
 # CKAN php api client
-[![Build Status](https://travis-ci.org/OpenDaje/ckan-php-api-client.svg?branch=master)](https://travis-ci.org/OpenDaje/ckan-php-api-client)
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 
@@ -19,8 +18,10 @@ Requirements
 | [ckan.logic.action.get.package_list](http://docs.ckan.org/en/ckan-2.7.3/api/index.html#ckan.logic.action.get.package_list) | Y |
 | [ckan.logic.action.get.current_package_list_with_resources](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.current_package_list_with_resources) | Y |
 | [ckan.logic.action.get.revision_list](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.revision_list)| Y |
-| [ckan.logic.action.get.package_revision_list](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.package_revision_list) | WIP |
+| [ckan.logic.action.get.package_revision_list](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.package_revision_list) | Y |
+| [ckan.logic.action.get.member_list ***](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.member_list) | WIP |
 
+| []() | WIP |
 ## Contribute
 
 Please feel free to fork and extend, send a pull request with your changes!
