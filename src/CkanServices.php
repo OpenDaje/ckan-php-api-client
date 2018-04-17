@@ -100,8 +100,48 @@ final class CkanServices
                         ],
                     ]
                 ],
+
+
+                // ckan.logic.action.get.package_revision_list -> http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.package_revision_list
+                'GetPackageRevisionList' => [
+                    'httpMethod' => 'GET',
+                    'uri' => '/api/3/action/package_revision_list{?id}',
+                    'summary' => 'Return a dataset (package)’s revisions as a list of dictionaries.',
+                    'responseModel' => 'getGenericRespone',
+                    'responseNotes' => 'not defined in the official guide',
+                    'parameters' => [
+                        'id' => [
+                            'type' => 'string',
+                            'location' => 'uri',
+                            'required' => true,
+                            'description' => 'id (string) – the id or name of the dataset',
+                        ]
+                    ],
+                ],
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             ],
             'models' => [
+                'getGenericRespone' => [
+                    'type' => 'object',
+                    'additionalProperties' => [
+                        'location' => 'json'
+                    ]
+                ],
+
                 'getSiteRead' => [
                     'type' => 'object',
                     'additionalProperties' => [

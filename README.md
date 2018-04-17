@@ -19,7 +19,7 @@ Requirements
 | [ckan.logic.action.get.package_list](http://docs.ckan.org/en/ckan-2.7.3/api/index.html#ckan.logic.action.get.package_list) | Y |
 | [ckan.logic.action.get.current_package_list_with_resources](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.current_package_list_with_resources) | Y |
 | [ckan.logic.action.get.revision_list](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.revision_list)| Y |
-
+| [ckan.logic.action.get.package_revision_list](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.package_revision_list) | WIP |
 
 ## Contribute
 
