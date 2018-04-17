@@ -149,7 +149,6 @@ final class CkanServices
 
                     ],
                 ],
-
 //              PLACEORDER
 //
 //                ckan.logic.action.get.group_list	PLANNED - LOW PRIORITY
@@ -158,8 +157,7 @@ final class CkanServices
 //                ckan.logic.action.get.organization_list_for_user	PLANNED - LOW PRIORITY
 //                ckan.logic.action.get.group_revision_list	PLANNED - LOW PRIORITY
 //                ckan.logic.action.get.organization_revision_list	PLANNED - LOW PRIORITY
-
-
+//
                 // ckan.logic.action.get.license_list -> http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.license_list
                 'GetLicenseList' => [
                     'httpMethod' => 'GET',
@@ -169,8 +167,35 @@ final class CkanServices
                     'responseNotes' => 'Return type: list of dictionaries',
                 ],
 
+                // ckan.logic.action.get.tag_list -> http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.tag_list
+                'GetTagList' => [
+                    'httpMethod' => 'GET',
+                    'uri' => '/api/3/action/tag_list{?query,vocabulary_id,all_fields}',
+                    'summary' => 'Return a list of the site’s tags.',
+                    'responseModel' => 'getGenericResponse',
+                    'responseNotes' => 'Return type: list of dictionaries',
+                    'parameters' => [
+                        'query' => [
+                            'type' => 'string',
+                            'location' => 'uri',
+                            'required' => false,
+                            'description' => 'query (string) – a tag name query to search for, if given only tags whose names contain this string will be returned (optional)',
+                        ],
+                        'vocabulary_id' => [
+                            'type' => 'string',
+                            'location' => 'uri',
+                            'required' => false,
+                            'description' => 'vocabulary_id (string) – the id or name of a vocabulary, if give only tags that belong to this vocabulary will be returned (optional)'
+                        ],
+                        'all_fields' => [
+                            'type' => 'boolean',
+                            'location' => 'uri',
+                            'required' => false,
+                            'description' => 'all_fields (boolean) – return full tag dictionaries instead of just names'
 
-
+                        ]
+                    ],
+                ],
 
 
 
