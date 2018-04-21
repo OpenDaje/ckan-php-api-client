@@ -29,7 +29,7 @@ Requirements
 | [ckan.logic.action.get.license_list](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.license_list) | Y |
 | [ckan.logic.action.get.tag_list](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.tag_list) | Y |
 | [ckan.logic.action.get.user_list](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.user_list) | PLANNED - LOW PRIORITY |
-| [ckan.logic.action.get.package_relationships_list](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.package_relationships_list) | PLANNED |
+| [ckan.logic.action.get.package_relationships_list](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.package_relationships_list) | Y |
 | [ckan.logic.action.get.package_show](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.package_show) | PLANNED |
 | [ckan.logic.action.get.resource_show](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.resource_show) | PLANNED |
 | [ckan.logic.action.get.resource_view_show](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.resource_view_show) | PLANNED |
