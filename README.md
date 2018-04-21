@@ -32,8 +32,8 @@ Requirements
 | [ckan.logic.action.get.package_relationships_list](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.package_relationships_list) | Y |
 | [ckan.logic.action.get.package_show](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.package_show) | Y |
 | [ckan.logic.action.get.resource_show](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.resource_show) | Y |
-| [ckan.logic.action.get.resource_view_show](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.resource_view_show) | PLANNED |
-| [ckan.logic.action.get.resource_view_list](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.resource_view_list) | PLANNED |
+| [ckan.logic.action.get.resource_view_show](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.resource_view_show) | Y |
+| [ckan.logic.action.get.resource_view_list](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.resource_view_list) | Y |
 | [ckan.logic.action.get.resource_status_show](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.resource_status_show) | PLANNED |
 | [ckan.logic.action.get.revision_show](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.revision_show) | PLANNED |
 | [ckan.logic.action.get.group_show](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.group_show) | PLANNED - LOW PRIORITY |

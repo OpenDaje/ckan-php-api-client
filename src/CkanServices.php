@@ -257,10 +257,6 @@ final class CkanServices
                         ]
                     ],
                 ],
-
-
-
-
                 // ckan.logic.action.get.resource_show -> http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.resource_show
                 'GetResourceShow' => [
                     'httpMethod' => 'GET',
@@ -283,6 +279,65 @@ final class CkanServices
                         ]
                     ],
                 ],
+                // ckan.logic.action.get.resource_view_show -> http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.resource_view_show
+                'GetResourceViewShow' => [
+                    'httpMethod' => 'GET',
+                    'uri' => '/api/3/action/resource_view_show{?id}',
+                    'summary' => 'Return the metadata of a resource_view.',
+                    'responseModel' => 'getGenericResponse',
+                    'responseNotes' => 'Return type: dictionary',
+                    'parameters' => [
+                        'id' => [
+                            'type' => 'string',
+                            'location' => 'uri',
+                            'required' => true,
+                            'description' => 'id (string) – the id of the resource_view',
+                        ],
+                    ],
+                ],
+                // ckan.logic.action.get.resource_view_list -> http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.resource_view_list
+                'GetResourceViewList' => [
+                    'httpMethod' => 'GET',
+                    'uri' => '/api/3/action/resource_view_list{?id}',
+                    'summary' => 'Return the list of resource views for a particular resource.',
+                    'responseModel' => 'getGenericResponse',
+                    'responseNotes' => 'list of dictionaries.',
+                    'parameters' => [
+                        'id' => [
+                            'type' => 'string',
+                            'location' => 'uri',
+                            'required' => true,
+                            'description' => 'id (string) – the id of the resource',
+                        ],
+                    ],
+                ],
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
