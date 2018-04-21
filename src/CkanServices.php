@@ -166,7 +166,6 @@ final class CkanServices
                     'responseModel' => 'getGenericResponse',
                     'responseNotes' => 'Return type: list of dictionaries',
                 ],
-
                 // ckan.logic.action.get.tag_list -> http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.tag_list
                 'GetTagList' => [
                     'httpMethod' => 'GET',
@@ -196,6 +195,57 @@ final class CkanServices
                         ]
                     ],
                 ],
+//              PLACEORDER
+//
+//                ckan.logic.action.get.user_list	PLANNED - LOW PRIORITY
+
+
+
+
+
+
+
+
+                // ckan.logic.action.get.package_relationships_list -> http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.package_relationships_list
+                'GetPackageRelationshipsList' => [
+                    'httpMethod' => 'GET',
+                    'uri' => '/api/3/action/package_relationships_list{?id,id2,rel}',
+                    'summary' => 'Return a dataset (package)’s relationships.',
+                    'responseModel' => 'getGenericResponse',
+                    'responseNotes' => 'Return type: list of dictionaries',
+                    'parameters' => [
+                        'id' => [
+                            'type' => 'string',
+                            'location' => 'uri',
+                            'required' => false,
+                            'description' => 'id (string) – the id or name of the first package',
+                        ],
+                        'id2' => [
+                            'type' => 'string',
+                            'location' => 'uri',
+                            'required' => false,
+                            'description' => 'id2 – the id or name of the second package'
+                        ],
+                        'rel' => [
+                            //TODO check... is realy string
+                            'type' => 'string',
+                            'location' => 'uri',
+                            'required' => false,
+                            'description' => 'rel – relationship as string see package_relationship_create() for the relationship types (optional)'
+
+                        ]
+                    ],
+                ],
+
+
+
+
+
+
+
+
+
+
 
 
 
