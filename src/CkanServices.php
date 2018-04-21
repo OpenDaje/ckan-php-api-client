@@ -198,14 +198,7 @@ final class CkanServices
 //              PLACEORDER
 //
 //                ckan.logic.action.get.user_list	PLANNED - LOW PRIORITY
-
-
-
-
-
-
-
-
+//
                 // ckan.logic.action.get.package_relationships_list -> http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.package_relationships_list
                 'GetPackageRelationshipsList' => [
                     'httpMethod' => 'GET',
@@ -217,13 +210,13 @@ final class CkanServices
                         'id' => [
                             'type' => 'string',
                             'location' => 'uri',
-                            'required' => false,
+                            'required' => true,
                             'description' => 'id (string) – the id or name of the first package',
                         ],
                         'id2' => [
                             'type' => 'string',
                             'location' => 'uri',
-                            'required' => false,
+                            'required' => true,
                             'description' => 'id2 – the id or name of the second package'
                         ],
                         'rel' => [
@@ -236,13 +229,60 @@ final class CkanServices
                         ]
                     ],
                 ],
+                // ckan.logic.action.get.package_show -> http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.package_show
+                'GetPackageShow' => [
+                    'httpMethod' => 'GET',
+                    'uri' => '/api/3/action/package_show{?id,use_default_schema,include_tracking}',
+                    'summary' => 'Return the metadata of a dataset (package) and its resources.',
+                    'responseModel' => 'getGenericResponse',
+                    'responseNotes' => 'Return type: dictionary',
+                    'parameters' => [
+                        'id' => [
+                            'type' => 'string',
+                            'location' => 'uri',
+                            'required' => true,
+                            'description' => 'id (string) – the id of the resource',
+                        ],
+                        'use_default_schema' => [
+                            'type' => 'boolean',
+                            'location' => 'uri',
+                            'required' => false,
+                            'description' => 'use_default_schema (bool) – use default package schema instead of a custom schema defined with an IDatasetForm plugin (default: False)',
+                        ],
+                        'include_tracking' => [
+                            'type' => 'boolean',
+                            'location' => 'uri',
+                            'required' => false,
+                            'description' => 'include_tracking (bool) – add tracking information to dataset and resources (default: False)'
+                        ]
+                    ],
+                ],
 
 
 
 
-
-
-
+                // ckan.logic.action.get.resource_show -> http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.resource_show
+                'GetResourceShow' => [
+                    'httpMethod' => 'GET',
+                    'uri' => '/api/3/action/resource_show{?id,include_tracking}',
+                    'summary' => 'Return the metadata of a resource.',
+                    'responseModel' => 'getGenericResponse',
+                    'responseNotes' => 'Return type: dictionary',
+                    'parameters' => [
+                        'id' => [
+                            'type' => 'string',
+                            'location' => 'uri',
+                            'required' => true,
+                            'description' => 'id (string) – the id of the resource',
+                        ],
+                        'include_tracking' => [
+                            'type' => 'boolean',
+                            'location' => 'uri',
+                            'required' => false,
+                            'description' => 'include_tracking (bool) – add tracking information to dataset and resources (default: False)'
+                        ]
+                    ],
+                ],
 
 
 

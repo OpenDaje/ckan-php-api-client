@@ -13,7 +13,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - ckan.logic.action.get.group_revision_list
 - ckan.logic.action.get.organization_revision_list
 - ckan.logic.action.get.user_list
-- ckan.logic.action.get.package_show
 - ckan.logic.action.get.resource_show
 - ckan.logic.action.get.resource_view_show
 - ckan.logic.action.get.resource_view_list
@@ -26,6 +25,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [0.1.] - WIP
 ### Added
 - [ckan.logic.action.get.package_relationships_list](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.package_relationships_list)
+- [ckan.logic.action.get.package_show](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.package_show)
+- [ckan.logic.action.get.resource_show](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.resource_show)
 
 ## [0.1.2] - 2018-04-17
 ### Added
