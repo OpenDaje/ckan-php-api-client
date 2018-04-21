@@ -311,7 +311,22 @@ final class CkanServices
                         ],
                     ],
                 ],
-
+                // ckan.logic.action.get.resource_status_show -> http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.resource_status_show
+                'GetResourceStatusShow' => [
+                    'httpMethod' => 'GET',
+                    'uri' => '/api/3/action/resource_status_show{?id}',
+                    'summary' => 'Return the statuses of a resource’s tasks. This function is DEPRECATED.',
+                    'responseModel' => 'getGenericResponse',
+                    'responseNotes' => 'list of (status, date_done, traceback, task_status) dictionaries',
+                    'parameters' => [
+                        'id' => [
+                            'type' => 'string',
+                            'location' => 'uri',
+                            'required' => true,
+                            'description' => 'id (string) – the id of the resource',
+                        ],
+                    ],
+                ],
 
 
 
