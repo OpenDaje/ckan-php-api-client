@@ -20,7 +20,7 @@ Requirements
 | [ckan.logic.action.get.revision_list](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.revision_list)| Y |
 | [ckan.logic.action.get.package_revision_list](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.package_revision_list) | Y |
 | [ckan.logic.action.get.member_list ***](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.member_list) | Y |
-| [ckan.logic.action.get.group_list](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.group_list) | PLANNED - LOW PRIORITY |
+| [ckan.logic.action.get.group_list](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.group_list) | Y |
 | [ckan.logic.action.get.organization_list](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.organization_list) | PLANNED - LOW PRIORITY |
 | [ckan.logic.action.get.group_list_authz](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.group_list_authz) | PLANNED - LOW PRIORITY |
 | [ckan.logic.action.get.organization_list_for_user](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.organization_list_for_user) | PLANNED - LOW PRIORITY |
@@ -34,9 +34,9 @@ Requirements
 | [ckan.logic.action.get.resource_show](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.resource_show) | Y |
 | [ckan.logic.action.get.resource_view_show](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.resource_view_show) | Y |
 | [ckan.logic.action.get.resource_view_list](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.resource_view_list) | Y |
-| [ckan.logic.action.get.resource_status_show](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.resource_status_show) | WIP |
-| [ckan.logic.action.get.revision_show](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.revision_show) | PLANNED |
-| [ckan.logic.action.get.group_show](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.group_show) | PLANNED - LOW PRIORITY |
+| [ckan.logic.action.get.resource_status_show](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.resource_status_show) | Y |
+| [ckan.logic.action.get.revision_show](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.revision_show) | Y |
+| [ckan.logic.action.get.group_show](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.group_show) | Y |
 
 
 

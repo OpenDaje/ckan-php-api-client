@@ -149,9 +149,87 @@ final class CkanServices
 
                     ],
                 ],
+                // ckan.logic.action.get.group_list -> http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.group_list
+                'GetGroupList' => [
+                    'httpMethod' => 'GET',
+                    'uri' => '/api/3/action/group_list{?order_by,sort,limit,offset,groups,all_fields,include_dataset_count,include_extras,include_tags,include_groups,include_users}',
+                    'summary' => 'Return a list of the names of the site’s groups.',
+                    'responseModel' => 'getGenericResponse',
+                    'responseNotes' => 'Return type: list of strings',
+                    'parameters' => [
+                        'order_by' => [
+                            'type' => 'string',
+                            'location' => 'uri',
+                            'required' => false,
+                            'description' => 'order_by (string) – the field to sort the list by, must be \'name\' or \'packages\' (optional, default: \'name\') Deprecated use sort.',
+                        ],
+                        'sort' => [
+                            'type' => 'string',
+                            'location' => 'uri',
+                            'required' => false,
+                            'description' => 'sort (string) – sorting of the search results. Optional. Default: “name asc” string of field name and sort-order. The allowed fields are ‘name’, ‘package_count’ and ‘title’',
+                        ],
+                        'limit' => [
+                            'type' => 'integer',
+                            'location' => 'uri',
+                            'required' => false,
+                            'description' => 'limit (int) – if given, the list of groups will be broken into pages of at most limit groups per page and only one page will be returned at a time (optional)',
+                        ],
+                        'offset' => [
+                            'type' => 'integer',
+                            'location' => 'uri',
+                            'required' => false,
+                            'description' => 'offset (int) – when limit is given, the offset to start returning groups from',
+                        ],
+                        'groups' => [
+                            // TODO check guzzle service definition maybe type array or object
+                            'type' => 'array',
+                            'location' => 'uri',
+                            'required' => false,
+                            'description' => 'groups (list of strings) – a list of names of the groups to return, if given only groups whose names are in this list will be returned (optional)',
+                        ],
+                        'all_fields' => [
+                            'type' => 'boolean',
+                            'location' => 'uri',
+                            'required' => false,
+                            'description' => 'all_fields (boolean) – return group dictionaries instead of just names. Only core fields are returned - get some more using the include_* options. Returning a list of packages is too expensive, so the packages property for each group is deprecated, but there is a count of the packages in the package_count property. (optional, default: False)',
+                        ],
+                        'include_dataset_count' => [
+                            'type' => 'boolean',
+                            'location' => 'uri',
+                            'required' => false,
+                            'description' => 'include_dataset_count (boolean) – if all_fields, include the full package_count (optional, default: True)',
+                        ],
+                        'include_extras' => [
+                            'type' => 'boolean',
+                            'location' => 'uri',
+                            'required' => false,
+                            'description' => 'include_extras – if all_fields, include the group extra fields (optional, default: False)',
+                        ],
+                        'include_tags' => [
+                            'type' => 'boolean',
+                            'location' => 'uri',
+                            'required' => false,
+                            'description' => 'include_tags (boolean) – if all_fields, include the group tags (optional, default: False)',
+                        ],
+                        'include_groups' => [
+                            'type' => 'boolean',
+                            'location' => 'uri',
+                            'required' => false,
+                            'description' => 'include_groups (boolean) – if all_fields, include the groups the groups are in (optional, default: False).',
+                        ],
+                        'include_users' => [
+                            'type' => 'boolean',
+                            'location' => 'uri',
+                            'required' => false,
+                            'description' => 'include_users (boolean) – if all_fields, include the group users (optional, default: False).',
+                        ],
+                    ],
+
+                ],
+
 //              PLACEORDER
 //
-//                ckan.logic.action.get.group_list	PLANNED - LOW PRIORITY
 //                ckan.logic.action.get.organization_list	PLANNED - LOW PRIORITY
 //                ckan.logic.action.get.group_list_authz	PLANNED - LOW PRIORITY
 //                ckan.logic.action.get.organization_list_for_user	PLANNED - LOW PRIORITY
@@ -317,7 +395,7 @@ final class CkanServices
                     'uri' => '/api/3/action/resource_status_show{?id}',
                     'summary' => 'Return the statuses of a resource’s tasks. This function is DEPRECATED.',
                     'responseModel' => 'getGenericResponse',
-                    'responseNotes' => 'list of (status, date_done, traceback, task_status) dictionaries',
+                    'responseNotes' => 'Return type: list of (status, date_done, traceback, task_status) dictionaries',
                     'parameters' => [
                         'id' => [
                             'type' => 'string',
@@ -327,19 +405,81 @@ final class CkanServices
                         ],
                     ],
                 ],
-
-
-
-
-
-
-
-
-
-
-
-
-
+                // ckan.logic.action.get.revision_show -> http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.revision_show
+                'GetRevisionShow' => [
+                    'httpMethod' => 'GET',
+                    'uri' => '/api/3/action/revision_show{?id}',
+                    'summary' => 'Return the details of a revision.',
+                    'responseModel' => 'getGenericResponse',
+                    'responseNotes' => 'Return type: dictionary',
+                    'parameters' => [
+                        'id' => [
+                            'type' => 'string',
+                            'location' => 'uri',
+                            'required' => true,
+                            'description' => 'id (string) – the id of the resource',
+                        ],
+                    ],
+                ],
+                // ckan.logic.action.get.group_show -> http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.group_show
+                'GetGroupShow' => [
+                    'httpMethod' => 'GET',
+                    'uri' => '/api/3/action/group_show{?id,include_datasets,include_dataset_count,include_extras,include_users,include_groups,include_tags,include_followers}',
+                    'summary' => 'Return the details of a group.',
+                    'responseModel' => 'getGenericResponse',
+                    'responseNotes' => 'Return type: dictionary',
+                    'parameters' => [
+                        'id' => [
+                            //TODO errore nella guida ufficiale, è indicato come parametro boolean
+                            'type' => 'string',
+                            'location' => 'uri',
+                            'required' => true,
+                            'description' => 'id (string) – the id or name of the group',
+                        ],
+                        'include_datasets' => [
+                            'type' => 'boolean',
+                            'location' => 'uri',
+                            'required' => false,
+                            'description' => 'include_datasets (boolean) – include a truncated list of the group’s datasets (optional, default: False)',
+                        ],
+                        'include_dataset_count' => [
+                            'type' => 'boolean',
+                            'location' => 'uri',
+                            'required' => false,
+                            'description' => 'include_dataset_count (boolean) – include the full package_count (optional, default: True)',
+                        ],
+                        'include_extras' => [
+                            'type' => 'boolean',
+                            'location' => 'uri',
+                            'required' => false,
+                            'description' => 'include_extras – include the group’s extra fields (optional, default: True)',
+                        ],
+                        'include_users' => [
+                            'type' => 'boolean',
+                            'location' => 'uri',
+                            'required' => false,
+                            'description' => 'include_users – include the group’s users (optional, default: True)',
+                        ],
+                        'include_groups' => [
+                            'type' => 'boolean',
+                            'location' => 'uri',
+                            'required' => false,
+                            'description' => 'include_groups – include the group’s sub groups (optional, default: True)',
+                        ],
+                        'include_tags' => [
+                            'type' => 'boolean',
+                            'location' => 'uri',
+                            'required' => false,
+                            'description' => 'include the group’s tags (optional, default: True)',
+                        ],
+                        'include_followers' => [
+                            'type' => 'boolean',
+                            'location' => 'uri',
+                            'required' => false,
+                            'description' => 'include_followers – include the group’s number of followers (optional, default: True)',
+                        ],
+                    ],
+                ],
 
 
 
