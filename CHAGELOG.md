@@ -6,16 +6,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
  
-- ckan.logic.action.get.organization_list
 - ckan.logic.action.get.group_list_authz
 - ckan.logic.action.get.organization_list_for_user
 - ckan.logic.action.get.group_revision_list
 - ckan.logic.action.get.organization_revision_list
-- ckan.logic.action.get.user_list
 
-
-
-## [0.1.] - WIP
+## [0.1.3] - 2018-04-22
 ### Added
 - [ckan.logic.action.get.package_relationships_list](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.package_relationships_list)
 - [ckan.logic.action.get.package_show](http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.package_show)
