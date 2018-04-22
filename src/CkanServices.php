@@ -227,7 +227,83 @@ final class CkanServices
                     ],
 
                 ],
-
+                // ckan.logic.action.get.organization_list -> http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.organization_list
+                'GetOrganizationList' => [
+                    'httpMethod' => 'GET',
+                    'uri' => '/api/3/action/organization_list{?order_by,sort,limit,offset,organizations,all_fields,include_dataset_count,include_extras,include_tags,include_groups,include_users}',
+                    'summary' => 'Return a list of the names of the site’s organizations.',
+                    'responseModel' => 'getGenericResponse',
+                    'responseNotes' => 'Return type: list of strings',
+                    'parameters' => [
+                        'order_by' => [
+                            'type' => 'string',
+                            'location' => 'uri',
+                            'required' => false,
+                            'description' => 'order_by (string) – the field to sort the list by, must be \'name\' or \'packages\' (optional, default: \'name\') Deprecated use sort.'
+                        ],
+                        'sort' => [
+                            'type' => 'string',
+                            'location' => 'uri',
+                            'required' => false,
+                            'description' => 'sort (string) – sorting of the search results. Optional. Default: “name asc” string of field name and sort-order. The allowed fields are ‘name’, ‘package_count’ and ‘title’',
+                        ],
+                        'limit' => [
+                            'type' => 'integer',
+                            'location' => 'uri',
+                            'required' => false,
+                            'description' => 'limit (int) – if given, the list of organizations will be broken into pages of at most limit organizations per page and only one page will be returned at a time (optional)',
+                        ],
+                        'offset' => [
+                            'type' => 'integer',
+                            'location' => 'uri',
+                            'required' => false,
+                            'description' => 'offset (int) – when limit is given, the offset to start returning organizations from',
+                        ],
+                        'organizations' => [
+                            // TODO check guzzle service guide  (list of string) is array or object
+                            'type' => 'string',
+                            'location' => 'uri',
+                            'required' => false,
+                            'description' => 'organizations (list of strings) – a list of names of the groups to return, if given only groups whose names are in this list will be returned (optional)',
+                        ],
+                        'all_fields' => [
+                            'type' => 'boolean',
+                            'location' => 'uri',
+                            'required' => false,
+                            'description' => 'all_fields (boolean) – return group dictionaries instead of just names. Only core fields are returned - get some more using the include_* options. Returning a list of packages is too expensive, so the packages property for each group is deprecated, but there is a count of the packages in the package_count property. (optional, default: False)'
+                        ],
+                        'include_dataset_count' => [
+                            'type' => 'boolean',
+                            'location' => 'uri',
+                            'required' => false,
+                            'description' => 'include_dataset_count (boolean) – if all_fields, include the full package_count (optional, default: True)'
+                        ],
+                        'include_extras' => [
+                            'type' => 'boolean',
+                            'location' => 'uri',
+                            'required' => false,
+                            'description' => 'include_extras (boolean) – if all_fields, include the organization extra fields (optional, default: False)'
+                        ],
+                        'include_tags' => [
+                            'type' => 'boolean',
+                            'location' => 'uri',
+                            'required' => false,
+                            'description' => 'include_tags (boolean) – if all_fields, include the organization tags (optional, default: False)'
+                        ],
+                        'include_groups' => [
+                            'type' => 'boolean',
+                            'location' => 'uri',
+                            'required' => false,
+                            'description' => 'include_groups – if all_fields, include the organizations the organizations are in (optional, default: False)'
+                        ],
+                        'include_users' => [
+                            'type' => 'boolean',
+                            'location' => 'uri',
+                            'required' => false,
+                            'description' => 'include_users (boolean) – if all_fields, include the organization users (optional, default: False).'
+                        ],
+                    ],
+                ],
 //              PLACEORDER
 //
 //                ckan.logic.action.get.organization_list	PLANNED - LOW PRIORITY
@@ -273,10 +349,35 @@ final class CkanServices
                         ]
                     ],
                 ],
-//              PLACEORDER
-//
-//                ckan.logic.action.get.user_list	PLANNED - LOW PRIORITY
-//
+                // ckan.logic.action.get.user_list -> http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.user_list
+                'GetUserList' => [
+                    'httpMethod' => 'GET',
+                    'uri' => '/api/3/action/user_list{?q,order_by,all_fields}',
+                    'summary' => 'Return a list of the site’s user accounts.',
+                    'responseModel' => 'getGenericResponse',
+                    'responseNotes' => 'Return type: list of user dictionaries. User properties include: number_of_edits which counts the revisions by the user and number_created_packages which excludes datasets which are private or draft state.',
+                    'parameters' => [
+                        'q' => [
+                            'type' => 'string',
+                            'location' => 'uri',
+                            'required' => false,
+                            'description' => 'q (string) – restrict the users returned to those whose names contain a string (optional)',
+                        ],
+                        'order_by' => [
+                            'type' => 'string',
+                            'location' => 'uri',
+                            'required' => false,
+                            'description' => 'order_by (string) – which field to sort the list by (optional, default: \'name\'). Can be any user field or edits (i.e. number_of_edits).'
+                        ],
+                        'all_fields' => [
+                            'type' => 'boolean',
+                            'location' => 'uri',
+                            'required' => false,
+                            'description' => 'all_fields (boolean) – return full user dictionaries instead of just names. (optional, default: True)'
+
+                        ]
+                    ],
+                ],
                 // ckan.logic.action.get.package_relationships_list -> http://docs.ckan.org/en/ckan-2.7.3/api/#ckan.logic.action.get.package_relationships_list
                 'GetPackageRelationshipsList' => [
                     'httpMethod' => 'GET',
@@ -480,32 +581,6 @@ final class CkanServices
                         ],
                     ],
                 ],
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             ],
             'models' => [
                 'getGenericResponse' => [
